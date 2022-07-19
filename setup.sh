@@ -1,5 +1,5 @@
 echo creating code coverage output file
-cat > ~/.aws/credentials << EOF
+cat > codecoverage.txt << EOF
 === Test Summary
 NAME                 VALUE                        
 ───────────────────  ─────────────────────────────
