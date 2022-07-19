@@ -21,9 +21,17 @@ jobs:
       - run:
           name: Fetch code coverage
           command: |
-            awk '$0 ~ /Org/{print $4}' codecoverage.txt
             output=$(awk '$0 ~ /Org/{print $4}' codecoverage.txt)
             echo $output
+      - run:
+          name: Check condition
+          command: |
+            if [[ "${output}" == "77%" ]];
+            then
+              echo "Good"
+            else
+              echo "Bad"
+            fi
             
 
 workflows:
