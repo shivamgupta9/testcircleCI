@@ -22,6 +22,12 @@ jobs:
           name: Fetch code coverage
           command: |
             awk '$0 ~ /Org/{print $4}' codecoverage.txt
+            if [ "awk '$0 ~ /Org/{print $4}' codecoverage.txt" < "80" ];
+            then
+              echo code coverage is less
+            else
+              echo code coverage is good
+            fi
 
 workflows:
   test_code_coverage:
