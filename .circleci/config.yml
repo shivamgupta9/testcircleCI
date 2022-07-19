@@ -26,10 +26,10 @@ jobs:
             if [ "$output" = "77%" ]; then
                 circleci-agent step halt
             fi
-       - run:
-           name: finish
-           command: |
-             echo "Thanks you"
+      - run:
+          name: finish
+          command: |
+            echo "Thanks you"
 
 workflows:
   test_code_coverage:
