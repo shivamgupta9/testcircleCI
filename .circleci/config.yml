@@ -23,14 +23,13 @@ jobs:
           command: |
             output=$(awk '$0 ~ /Org/{print $4}' codecoverage.txt)
             echo $output
-      - run: |
             if [ "$output" = "77%" ]; then
                 circleci-agent step halt
             fi
-      - run: 
-          name: Finish
-          command: |
-            echo $output
+       - run:
+           name: finish
+           command: |
+             echo "Thanks you"
 
 workflows:
   test_code_coverage:
