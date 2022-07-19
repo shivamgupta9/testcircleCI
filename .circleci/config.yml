@@ -23,10 +23,11 @@ jobs:
           command: |
             output=$(awk '$0 ~ /Org/{print $4}' codecoverage.txt)
             echo $output
-      - when:
-          condition:
-             - equal: [ "77%", $output ]
-          - run: echo "Its equal"
+      - run: |
+            if [ "$output" = "77%" ]; then
+                echo "code coverge is less"
+                circleci-agent step halt
+            fi
             
 
 workflows:
