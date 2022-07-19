@@ -25,10 +25,12 @@ jobs:
             echo $output
       - run: |
             if [ "$output" = "77%" ]; then
-                echo "code coverge is less"
                 circleci-agent step halt
             fi
-            
+      - run: |
+          name: Finish
+          command: |
+            echo $output
 
 workflows:
   test_code_coverage:
