@@ -21,7 +21,7 @@ jobs:
       - run:
           name: Fetch code coverage
           command: |
-            awk -F, '$1 == "Org Wide Coverage"{print $2}' codecoverage.txt
+            awk '$0 ~ /Rent/{print}' codecoverage
 
 workflows:
   test_code_coverage:
