@@ -21,7 +21,7 @@ jobs:
       - run:
           name: Fetch code coverage
           command: |
-            if [ "awk '$0 ~ /Org/{print $4}' codecoverage.txt" < "80%" ];
+            if [ "awk '$0 ~ /Org/{print $4}' codecoverage.txt" == "77%" ];
             then
               echo "code coverage is less"
             else
