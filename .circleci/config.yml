@@ -22,6 +22,7 @@ jobs:
           name: Fetch code coverage
           command: |
             awk '$0 ~ /Org/{print}' codecoverage.txt
+            $ awk -F, '$1 == "Org"{print $4}' codecoverage.txt
 
 workflows:
   test_code_coverage:
