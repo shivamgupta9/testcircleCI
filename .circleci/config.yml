@@ -18,6 +18,10 @@ jobs:
           name: Read codecoverage file
           command: |
             cat codecoverage.txt
+      - run:
+          name: Fetch code coverage
+          command: |
+            awk -F, '$1 == "Org Wide Coverage"{print $2}' codecoverage.txt
 
 workflows:
   test_code_coverage:
