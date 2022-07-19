@@ -27,7 +27,7 @@ jobs:
             if [ "$output" = "77%" ]; then
                 circleci-agent step halt
             fi
-      - run: |
+      - run: 
           name: Finish
           command: |
             echo $output
