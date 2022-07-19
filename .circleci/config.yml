@@ -23,15 +23,11 @@ jobs:
           command: |
             output=$(awk '$0 ~ /Org/{print $4}' codecoverage.txt)
             echo $output
-      - run:
-          name: Check condition
-          command: |
-            if [[ "${output}" == "77%" ]];
-            then
-              echo "Good"
-            else
-              echo "Bad"
-            fi
+      - when:
+          condition:
+             - equal: [ "77%", $output ]
+          steps:
+            - run: echo "Its equal"
             
 
 workflows:
