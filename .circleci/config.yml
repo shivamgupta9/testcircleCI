@@ -8,8 +8,6 @@ executors:
 jobs:
   code-coverage-check: 
     executor: kf-docker-node
-    environment:
-      CodeOutput: <<parameters.output>>
     steps: 
       - checkout
       - run:
