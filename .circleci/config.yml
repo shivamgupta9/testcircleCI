@@ -26,6 +26,7 @@ jobs:
             if [[ "$output" != "77%" ]]; then
                 echo "Good"
             fi
+            echo $output
       - run:
           name: finish
           command: |
