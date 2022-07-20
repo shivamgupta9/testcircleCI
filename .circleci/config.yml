@@ -24,7 +24,7 @@ jobs:
             output=$(awk '$0 ~ /Org/{print $4}' codecoverage.txt)
             echo $output
             if [[ "$output" = "77%" ]]; then
-                sleep 30
+              sleep 30
             fi
             echo $output
       - run:
