@@ -32,6 +32,11 @@ jobs:
               echo "Good"
             fi
             echo $output
+      - when: 
+          condition: 
+            equal: [ "77%", <<parameters.output>> ]
+          steps: 
+            - run: echo <<parameters.output>>
       - run:
           name: finish
           command: |
