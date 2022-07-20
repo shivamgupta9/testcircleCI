@@ -1,5 +1,10 @@
 version: 2.1
 
+parameters:
+  output:
+    type: string
+    default: "0%"
+
 executors:
   kf-docker-node: 
     docker:
