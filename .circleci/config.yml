@@ -13,6 +13,8 @@ executors:
 jobs:
   code-coverage-check: 
     executor: kf-docker-node
+    environment:
+      CodeOutput: <<parameters.output>>
     steps: 
       - checkout
       - run:
@@ -26,12 +28,12 @@ jobs:
       - run:
           name: Fetch code coverage
           command: |
-            output=$(awk '$0 ~ /Org/{print $4}' codecoverage.txt)
-            echo $output
+            CodeOutput=$(awk '$0 ~ /Org/{print $4}' codecoverage.txt)
+            echo $CodeOutput
             if [[ "$output" < "77%" ]]; then
               echo "Good"
             fi
-            echo $output
+            echo $CodeOutput
       - when: 
           condition: 
             equal: [ "77%", <<parameters.output>> ]
