@@ -23,6 +23,9 @@ jobs:
           command: |
             output=$(awk '$0 ~ /Org/{print $4}' codecoverage.txt)
             echo $output
+            if [ "$output" == "77%" ]; then
+              echo "Code coverage is not affected"
+            fi
       - run:
           name: finish
           command: |
