@@ -25,6 +25,8 @@ jobs:
             echo $output
             if [ ${output} != "77%" ]; then
               echo "Code coverage is affected"
+            else
+              echo "Code coverage is not affected"
             fi
       - run:
           name: finish
