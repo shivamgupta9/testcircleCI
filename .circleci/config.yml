@@ -39,7 +39,6 @@ jobs:
             else
               echo "Code coverage is not affected"
             fi
-      - end-task
       - run:
           name: finish
           command: |
