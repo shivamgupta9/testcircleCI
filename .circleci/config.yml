@@ -38,9 +38,11 @@ jobs:
             else
               echo "Code coverage is not affected"
             fi
-      - run:
-          name: delete-scratch-org
-          command: end-task
+      - when:
+          condition:
+            equal: [ 1, 1 ]
+          steps:
+            - end-task
       - run:
           name: finish
           command: |
