@@ -31,7 +31,7 @@ jobs:
           command: |
             output=$(awk '$0 ~ /Org/{print $4}' codecoverage.txt)
             echo $output
-            if [ ${output} != 78% ]; then
+            if [ ${output} != "78%" ]; then
               echo "Code coverage is affected"
               fail
             else
