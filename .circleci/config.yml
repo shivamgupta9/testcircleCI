@@ -11,7 +11,9 @@ commands:
       - run: echo "Welcome"
   end-task: 
     steps:
-      - run: echo "Good Byee"
+      - run:
+          name: Cleanup
+          command: echo "Good bye"
 
 jobs:
   code-coverage-check: 
