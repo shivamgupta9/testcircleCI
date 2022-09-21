@@ -38,6 +38,10 @@ jobs:
             else
               echo "Code coverage is not affected"
             fi
+      - run:
+          name: Run test
+          no_output_timeout: 30m
+          command: mvn test
       - end-task
       - run:
           name: finish
