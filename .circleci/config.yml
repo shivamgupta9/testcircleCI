@@ -41,7 +41,7 @@ jobs:
       - run:
           name: Run test
           no_output_timeout: 30m
-          command: mvn test
+          command: end-task
       - end-task
       - run:
           name: finish
