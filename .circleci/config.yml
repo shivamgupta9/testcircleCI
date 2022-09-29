@@ -39,11 +39,6 @@ jobs:
               echo "Code coverage is not affected"
             fi
       - run:
-          name: Run test
-          no_output_timeout: 30m
-          command: end-task
-      - end-task
-      - run:
           name: finish
           command: |
             echo $output
