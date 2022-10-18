@@ -25,6 +25,7 @@ jobs:
     steps: 
       - browser-tools/install-browser-tools
       - checkout
+      - run: echo "Hello"
       - run:
           name: Write output file
           command: |
